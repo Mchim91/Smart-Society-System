@@ -1,0 +1,30 @@
+<table [ngClass]="classNames" class="ui table">
+    <thead>
+      <tr>
+        <th *ngFor="let head of header ">
+          {{head.label}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+  
+  
+      <tr *ngFor="let d of data">
+        <td *ngFor="let head of header ">
+          {{d[head.key]}}
+        </td>
+        <td>
+  
+            <button (click)="emitEdit.emit(d)" >
+              edit
+            </button>
+  
+  
+          <button (click)="emitDelete.emit(d?._id)">
+            delete_forever
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
