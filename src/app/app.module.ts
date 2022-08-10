@@ -17,6 +17,7 @@ import { PrisonWardModule } from './prison-ward/prison-ward.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

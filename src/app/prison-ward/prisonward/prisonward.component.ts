@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society-service.service';
+
+
+interface prisonwards {
+  name: string;
+
+}
+
+
 
 @Component({
   selector: 'app-prisonward',
@@ -7,9 +16,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrisonwardComponent implements OnInit {
 
-  constructor() { }
+  PRISONWARD =[] as any[]
+  constructor(private http:SmartSocietyServiceService) { 
+    
+  }
 
   ngOnInit(): void {
+    this.http.findAll('prisonward').subscribe(res=>{
+      this.PRISONWARD=res
+    })
   }
 
 }

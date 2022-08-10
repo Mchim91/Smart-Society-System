@@ -10,7 +10,7 @@ export class SmartSocietyServiceService {
   constructor(private http: HttpClient) { }
 
   findAll(control:string): Observable<any>{
-   return this.http.get('http://localhost:3000/api/'+control+'/');
+   return this.http.get('http://localhost:3000/api/'+control);
   }
 
   update(_id:string ,details:any, control:string):Observable<any>{
