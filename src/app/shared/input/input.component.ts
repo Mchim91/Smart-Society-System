@@ -19,5 +19,6 @@ export class InputComponent implements OnInit {
   showErrors(){
     const {errors , touched , dirty}=this.control
   return errors && touched && dirty;
+
   }
 }

@@ -1,17 +1,39 @@
-<div (click)="onCloseClick()" class="ui dimmer visible active">
+<!-- <div (click)="onCloseClick()" class="ui dimmer visible active">
     <div (click)="$event.stopPropagation()" class="ui modal visible active">
       <i  (click)="onCloseClick()" class="close icon"></i>
       <div class="header">
          <ng-content select="[modalTitle]"></ng-content>
-  
+
       </div>
       <div class="content">
         <ng-content select="[modalInput]" ></ng-content>
       </div>
     <div class="actions">
-  
+
       <ng-content select="[modalButton]"></ng-content>
     </div>
     </div>
+  </div> -->
+
+<!-- <button
+    style="margin: 50px; padding: 10px"
+    type="button"
+    class="btn btn-primary"
+    (click)="openPopup()">Show Data
+  </button> -->
+<div (click)="closePopup()" class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':openModal}">
+  <div (click)="$event.stopPropagation()" class="modal-dialog" role="document">
+    <div  class="modal-content">
+      <div class="modal-header">
+        <ng-content select="[modalTitle]"></ng-content>
+      </div>
+      <div class="modal-body">
+        <ng-content select="[modalInput]" ></ng-content>
+
+      </div>
+      <div class="modal-footer">
+        <ng-content select="[modalButton]"></ng-content>
+      </div>
+    </div>
   </div>
-  
+</div>

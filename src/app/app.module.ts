@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { BailModule } from './bail/bail.module';
 import { BaseEntityModule } from './base-entity/base-entity.module';
 import { CauseOfCrimeModule } from './cause-of-crime/cause-of-crime.module';
@@ -15,6 +15,7 @@ import { OffendersModule } from './offenders/offenders.module';
 import { PrisonModule } from './prison/prison.module';
 import { PrisonWardModule } from './prison-ward/prison-ward.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     OffencesModule,
     OffendersModule,
     PrisonModule,HttpClientModule,
-    PrisonWardModule
+    PrisonWardModule,SharedModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

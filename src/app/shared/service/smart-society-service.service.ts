@@ -13,11 +13,6 @@ export class SmartSocietyServiceService {
    return this.http.get('http://localhost:3000/api/'+control+'/');
   }
 
-  findOne(id:string ,control:string):Observable<any>{
-
-    return this.http.get<any>('http://localhost:3000/api/'+control+'/username/'+id );
-  }
-
   update(_id:string ,details:any, control:string):Observable<any>{
     console.log(details)
     return  this.http.patch('http://localhost:3000/api/'+control+'/'+_id,details[0])
