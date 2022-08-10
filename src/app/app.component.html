@@ -1,2 +1,56 @@
+<mat-toolbar>
 
-<router-outlet></router-outlet>
+    Responsive side navigation
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+
+        <h4 class="name">John Smith</h4>
+        <p class="designation">Empowering the world
+        </p>
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/crimes']" routerLinkActive="active">
+            <span>Bail</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Base Entity</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Causes Of Crimes</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Correction Centers</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Court Charge</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Crime Offenders</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Crimes</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Offences</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Offenders</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Prison</span>
+        </button>
+        <button mat-button class="menu-button">
+            <span>Prison Ward</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z4">
+            <router-outlet></router-outlet>
+
+        </div>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>

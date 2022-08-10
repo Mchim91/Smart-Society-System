@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BailModule } from './bail/bail.module';
@@ -15,6 +17,13 @@ import { OffendersModule } from './offenders/offenders.module';
 import { PrisonModule } from './prison/prison.module';
 import { PrisonWardModule } from './prison-ward/prison-ward.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
     AppRoutingModule,
     BailModule,
     BaseEntityModule,
@@ -33,7 +44,13 @@ import { HttpClientModule } from '@angular/common/http';
     OffencesModule,
     OffendersModule,
     PrisonModule,HttpClientModule,
-    PrisonWardModule
+    PrisonWardModule,
+    DashboardModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TableComponent } from './table/table.component';
 import { InputComponent } from './input/input.component';
 import { ModalComponent } from './modal/modal.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 
@@ -10,7 +11,8 @@ import { ModalComponent } from './modal/modal.component';
   declarations: [
     TableComponent,
     InputComponent,
-    ModalComponent
+    ModalComponent,
+    LayoutComponent
   ],
   imports: [
     CommonModule
