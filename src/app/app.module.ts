@@ -16,6 +16,7 @@ import { PrisonModule } from './prison/prison.module';
 import { PrisonWardModule } from './prison-ward/prison-ward.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
