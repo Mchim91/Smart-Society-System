@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society-service.service';
+
 
 @Component({
   selector: 'app-courtcharge',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourtchargeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: SmartSocietyServiceService) { }
 
   ngOnInit(): void {
+    const a = this.http.findAll('courtcharge').subscribe((res:any) => {
+      console.log(res)
+
+    });
   }
 
 }

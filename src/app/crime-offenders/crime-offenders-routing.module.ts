@@ -4,7 +4,7 @@ import { CrimeOffendersComponent } from './crime-offenders/crime-offenders.compo
 
 const routes: Routes = [
   {
-    path: 'crimeoffenders', component: CrimeOffendersComponent
+    path: 'crimeOffenders', component: CrimeOffendersComponent
   }
 ];
 

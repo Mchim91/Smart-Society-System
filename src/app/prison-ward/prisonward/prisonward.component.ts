@@ -22,6 +22,11 @@ export class PrisonwardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    const a = this.http.findAll('prisonward').subscribe((res:any) => {
+      console.log(res)
+
+    });
     this.http.findAll('prisonward').subscribe(res=>{
       this.PRISONWARD=res
     })
