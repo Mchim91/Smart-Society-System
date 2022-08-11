@@ -9,8 +9,9 @@ import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society
   styleUrls: ['./prisonward.component.css']
 })
 export class PrisonwardComponent implements OnInit {
-  openModal='none'
-  duration=0
+  openModal='none';
+  openModal2 = 'none';
+  duration=0;
   main = [] as any;
   data = [] as any;
 
@@ -29,10 +30,26 @@ export class PrisonwardComponent implements OnInit {
     name: new FormControl('', [Validators.required]),
   });
 
-  onClickOpenModalAdd(){this.openModal='block'}
+  onClickOpenModalAdd(){
+
+    this.openModal='block'
+  
+  }
+
+  onClickOpenModalAdd2(){
+     this.openModal2='block'
+  }
 
   onClickCloseModalAdd(){
     this.openModal='none'
+  }
+
+  onUpdate() {
+    const a = this.http
+      .update(this.main?._id, [this.prisonwardForm.value], 'prisonward')
+      .subscribe((res) => {});
+    this.openModal2 = 'none';
+    window.location.reload();
   }
   onSubmit(){
     this.http.create(this.prisonwardForm.value, 'prisonward').subscribe((res) => {
@@ -44,7 +61,7 @@ export class PrisonwardComponent implements OnInit {
   }
 
   onEdit(value: any){
-    this.openModal='none';
+    this.openModal2='none';
     this.prisonwardForm.setValue({
       name: value?.name
     });
