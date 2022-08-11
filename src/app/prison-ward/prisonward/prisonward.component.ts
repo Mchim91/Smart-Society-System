@@ -10,57 +10,50 @@ import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society
 })
 export class PrisonwardComponent implements OnInit {
   openModal='none'
-  modal = false;
-  modal2 = false
-  data = [] as any;
+  duration=0
   main = [] as any;
-  dataD = 0;
+  data = [] as any;
+
   header = [
-    { key: 'name', label: 'Name' }
-  ]
+    { key: 'name', label: 'Name'},
+  ];
   constructor(private http: SmartSocietyServiceService) { }
   ngOnInit(): void {
   }
 
   prisonwardForm = new FormGroup({
+
     name: new FormControl('', [Validators.required]),
   });
 
-  onClick() {
-    this.modal = !this.modal;
+  onClickOpenModalAdd(){this.openModal='block'}
+
+  onClickCloseModalAdd(){
+    this.openModal='none'
   }
-
-  onClick2() {
-    this.modal2 = this.modal2;
-  }
-
-  onUpdate() {
-
-  }
-  onSubmit() {
-    this.http.create(this.prisonwardForm.value, 'prisonward').subscribe((res) => {
-
+  onSubmit(){
+    this.http.create(this.prisonwardForm.value, 'prisoward').subscribe((res) => {
       console.log(res);
       this.prisonwardForm.reset();
       this.openModal='none'
     });
+
   }
 
-  onEdit(value: any) {
-    this.modal2 = !this.modal2;
+  onEdit(value: any){
+    this.openModal='none';
     this.prisonwardForm.setValue({
-      name: value?.name,
+      name: value?.name
     });
-     this.main = value;
+    this.main = value;
   }
 
-  onDelete(value: any) {
+  onDelete(value: any){
     if(!value) {
       console.log('not found');
       return;
     }
-    this.http.delete(value, 'prisonward').subscribe((res) => {
-      window.location.reload();
-    })
+    this.http.delete(value, 'prisonward').subscribe((res) =>{});
+    window.location.reload();
   }
 }
