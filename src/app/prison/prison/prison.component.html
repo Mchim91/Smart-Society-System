@@ -1,16 +1,11 @@
-<button
-    style="margin: 50px; padding: 10px"
-    type="button"
-    class="btn btn-primary"
-    (click)="onClickOpenModalAdd()">Add
-  </button>
+<button type="button" class="btn btn-primary" (click)="onClickOpenModalAdd()"> Add </button>
 <app-modal  (close)="onClickCloseModalAdd()" [openModal]="openModal">
   <div modalTitle > Prison </div>
   <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
   <div modalInput>
     <app-input [type]="'text'" label="Name of Prison" [control]="prisonForm.controls.prisonName"></app-input>
     <app-input [type]="'text'" label="Location of Prison" [control]="prisonForm.controls.prisonLocation"></app-input>
-    <app-input [type]="'text'" label="Prison Ward id" [control]="prisonForm.controls.prisonWardId"></app-input>
+    <app-input [type]="'text'" label="Prison Ward Id" [control]="prisonForm.controls.prisonWardId"></app-input>
     <app-input [type]="'date'" label="Admission Date" [control]="prisonForm.controls.prisonAdmissionDate"></app-input>
     <app-input [type]="'date'" label="Release Date" [control]="prisonForm.controls.prisonReleaseDate"></app-input>
     <app-input [type]="'text'" label="Bail Bond" [control]="prisonForm.controls.bailBond"></app-input>
