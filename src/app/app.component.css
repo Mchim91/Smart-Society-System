@@ -27,7 +27,8 @@ mat-sidenav {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    width: 95%;
+    margin-top: 1rem;
     font-size: 2rem;
     color: lightgray;
 
