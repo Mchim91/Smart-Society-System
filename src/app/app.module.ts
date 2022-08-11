@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+// import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { BailModule } from './bail/bail.module';
 import { BaseEntityModule } from './base-entity/base-entity.module';
 import { CauseOfCrimeModule } from './cause-of-crime/cause-of-crime.module';

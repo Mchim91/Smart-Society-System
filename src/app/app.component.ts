@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SmartSocietyServiceService } from './shared/service/smart-society-service.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

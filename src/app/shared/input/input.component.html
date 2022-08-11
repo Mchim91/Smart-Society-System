@@ -1,20 +1,20 @@
 <ng-container class="field">
     <label class="label">{{label}}</label>
   <ng-container class="control">
-  
-    
-      <input [placeholder]="placeholder" [type]="type" [ngClass]="{'is-danger': showErrors()}"  />
+
+      <div>
+      <input [formControl]="control"  [placeholder]="placeholder" [type]="type" [ngClass]="{'is-danger': showErrors()}"  />
+    </div>
   </ng-container>
   <div  *ngIf="showErrors()">
-  
+
       <ng-container  *ngIf="control.errors?.['required']">
         Requried
       </ng-container>
-  
+
       <ng-container  *ngIf="control.errors?.['pattern']">
         Invalid Format
       </ng-container>
-  
+
     </div>
   </ng-container>
-  
