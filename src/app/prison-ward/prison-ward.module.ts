@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PrisonWardRoutingModule } from './prison-ward-routing.module';
 import { PrisonwardComponent } from './prisonward/prisonward.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { PrisonwardComponent } from './prisonward/prisonward.component';
   ],
   imports: [
     CommonModule,
-    PrisonWardRoutingModule
+    PrisonWardRoutingModule,SharedModule
   ],
 
   exports: []
