@@ -1,2 +1,56 @@
+<mat-toolbar>
 
-<router-outlet></router-outlet>
+    Demo Dashboard
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+
+        <h4 class="name">Demo Dashboard</h4>
+        <p class="designation">Testing all modules
+        </p>
+
+        <mat-divider></mat-divider>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/bail']" routerLinkActive="active">
+            <span>Bail</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/baseentity']" routerLinkActive="active">
+            <span>Base Entity</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/causeofcrime']" routerLinkActive="active">
+            <span>Causes Of Crimes</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/correctioncenters']" routerLinkActive="active">
+            <span>Correction Centers</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/courtcharge']" routerLinkActive="active">
+            <span>Court Charge</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/crimeOffenders']" routerLinkActive="active">
+            <span>Crime Offenders</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/crimes']" routerLinkActive="active">
+            <span>Crimes</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/offences']" routerLinkActive="active">
+            <span>Offences</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/offenders']" routerLinkActive="active">
+            <span>Offenders</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/prison']" routerLinkActive="active">
+            <span>Prison</span>
+        </button>
+        <button mat-button class="menu-button" mat-list-item [routerLink]="['/prisonward']" routerLinkActive="active">
+            <span>Prison Ward</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z4">
+            <router-outlet></router-outlet>
+
+        </div>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>

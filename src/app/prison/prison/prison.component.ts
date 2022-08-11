@@ -10,10 +10,7 @@ import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society
 export class PrisonComponent implements OnInit {
   openModal='none'
   duration=0
-  constructor(private http: SmartSocietyServiceService) { }
-  ngOnInit(): void {
-  }
-
+ 
   prisonForm = new FormGroup({
 
     prisonName: new FormControl('', [Validators.required]),
@@ -48,6 +45,14 @@ console.log(this.prisonForm.value)
       this.openModal='none'
     });
 
+  }
+
+  constructor(private http: SmartSocietyServiceService) { }
+  ngOnInit(): void {
+    const a = this.http.findAll('prison').subscribe((res:any) => {
+      console.log(res)
+
+    });
   }
 
 }
