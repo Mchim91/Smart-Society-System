@@ -19,6 +19,9 @@ export class PrisonwardComponent implements OnInit {
   ];
   constructor(private http: SmartSocietyServiceService) { }
   ngOnInit(): void {
+    const a = this.http.find('prisonward').subscribe((res) => {
+      this.data = res;
+    });
   }
 
   prisonwardForm = new FormGroup({
@@ -32,7 +35,7 @@ export class PrisonwardComponent implements OnInit {
     this.openModal='none'
   }
   onSubmit(){
-    this.http.create(this.prisonwardForm.value, 'prisoward').subscribe((res) => {
+    this.http.create(this.prisonwardForm.value, 'prisonward').subscribe((res) => {
       console.log(res);
       this.prisonwardForm.reset();
       this.openModal='none'
