@@ -1,18 +1,22 @@
-<p>Lorem, ipsum.</p>
+<button
+    style="margin: 50px; padding: 10px"
+    type="button"
+    class="btn btn-primary"
+    (click)="onClickOpenModalAdd()">Add
+  </button>
+<app-modal  (close)="onClickCloseModalAdd()" [openModal]="openModal">
+  <div modalTitle > Prison </div>
+  <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
+  <div modalInput>
+    <app-input [type]="'text'" label="Name of Prison" [control]="prisonwardForm.controls.name"></app-input>
+   </div>
 
-<table class="table table-dark shadow">
-    <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-         
-        </tr>
-      </thead>
-      <tbody>
-    <tr *ngFor="let prisonward of PRISONWARD; index as i">
-        <th scope="row">{{ i + 1 }}</th>
-        <td scope="row"> {{ prisonward.name }} </td>
+</app-modal>
 
-    </tr>
-</tbody>
-</table>
+<app-table classNames="table table-striped"
+(emitEdit2)="onEdit($event)"
+
+[data]="data" [header]="header"
+(emitDelete)="onDelete($event)"
+></app-table>
+

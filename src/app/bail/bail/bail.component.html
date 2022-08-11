@@ -1,1 +1,22 @@
-<p>bail works!</p>
+<table class="table table-dark table-bordered table-striped">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">crimeOffendersId</th>
+          <th scope="col">bailDate</th>
+          <th scope="col">bailerName</th>
+          <th scope="col">bailerPhoneNumber</th>
+          <th scope="col">bailerAdress</th>
+          <th scope="col">bailerEmail</th>
+          <th scope="col">bailBond</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+    <tr *ngFor="let bail of Bail">
+        <td scope="row"> {{ bail.crimeOffendersId }} </td>
+        
+    </tr>
+</tbody>
+</table>
+

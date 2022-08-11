@@ -22,8 +22,8 @@ export class SmartSocietyServiceService {
     return this.http.delete('http://localhost:3000/api/'+control+'/'+id);
   }
 
-  create(details:any,rs:string):Observable<any>{
-    return  this.http.post('http://localhost:3000/api/'+rs,details,).pipe(tap(()=>{
+  create(details:any,control:string):Observable<any>{
+    return  this.http.post('http://localhost:3000/api/'+control,details,).pipe(tap(()=>{
 
     }))
    }
