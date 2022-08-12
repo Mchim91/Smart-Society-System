@@ -1,1 +1,16 @@
-<p>baseentity works!</p>
+<button type="button" class="btn btn-primary" (click)="onClickOpenModalAdd()"> Add </button>
+<app-modal  (close)="onClickCloseModalAdd()" [openModal]="openModal">
+  <div modalTitle > Base Enitity </div>
+  <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
+  <div modalInput>
+    <app-input [type]="'date'" label="Created at" [control]="baseentityForm.controls.createdAt"></app-input>
+    <app-input [type]="'text'" label="modify by" [control]="baseentityForm.controls.modifyById"></app-input>
+    <app-input [type]="'date'" label="modified at" [control]="baseentityForm.controls.modifiedAt"></app-input>
+  </div>
+
+</app-modal>
+
+<app-table classNames="table table-striped table-bordered" (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
+  (emitDelete)="onDelete($event)"></app-table>
+
+    
