@@ -13,8 +13,12 @@ export class SmartSocietyServiceService {
    return this.http.get('http://localhost:3000/api/'+control);
   }
 
-  find(control:string):Observable<any>{
-    return this.http.get('http://localhost:3000/api/'+control+'/');
+  findById(id:string,control:string):Observable<any>{
+    return this.http.get('http://localhost:3000/api/'+control+'/'+id);
+  }
+
+  findIdNo(id:string,control:string):Observable<any>{
+    return this.http.get('http://localhost:3000/api/'+control+'/IdNo/'+id);
   }
 
   update(_id:string ,details:any, control:string):Observable<any>{

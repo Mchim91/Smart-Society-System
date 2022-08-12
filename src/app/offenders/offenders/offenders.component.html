@@ -1,1 +1,34 @@
-<p>offenders works!</p>
+<button type="button" class="btn btn-primary" (click)="onClickOpenModalAdd()"> Add </button>
+
+<div class="search">
+<input #search type="search" name="" id=""> 
+<button (click)="onSearch(search.value)" type="submit">search</button>
+</div>
+
+<app-modal  (close)="onClickCloseModalAdd()" [openModal]="openModal">
+    <div modalTitle ><h1> Offenders </h1></div>
+    <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
+    <div modalInput>
+      <app-input [type]="'text'" label="Id" [control]="OffendersForm.controls.offenderIdentificationNO"></app-input>
+      <app-input [type]="'text'" label="Name" [control]="OffendersForm.controls.offenderName"></app-input>
+      <app-input [type]="'text'" label="Gender" [control]="OffendersForm.controls.offenderGender"></app-input>
+      <app-input [type]="'text'" label="Description" [control]="OffendersForm.controls.offenderDescription"></app-input>
+    </div>
+  
+  </app-modal>
+
+  <app-table classNames="table table-striped table-bordered" (emitEdit)="onEdit($event)" [data]="data" [header]="header"
+  (emitDelete)="onDelete($event)"></app-table>
+
+  <app-modal  (close)="onClickCloseModal2Add()" [openModal]="openModal2">
+    <div modalTitle > Offenders </div>
+    <div modalButton> <button (click)="onUpdate()" class="ui button">Update</button></div>
+    <div modalInput>
+        <app-input [type]="'text'" label="Id" [control]="OffendersForm.controls.offenderIdentificationNO"></app-input>
+        <app-input [type]="'text'" label="Name" [control]="OffendersForm.controls.offenderName"></app-input>
+        <app-input [type]="'text'" label="Gender" [control]="OffendersForm.controls.offenderGender"></app-input>
+        <app-input [type]="'text'" label="Description" [control]="OffendersForm.controls.offenderDescription"></app-input>
+     </div>
+
+  </app-modal>
+    

@@ -20,7 +20,7 @@ export class PrisonwardComponent implements OnInit {
   ];
   constructor(private http: SmartSocietyServiceService) { }
   ngOnInit(): void {
-    const a = this.http.find('prisonward').subscribe((res) => {
+    const a = this.http.findAll('prisonward').subscribe((res) => {
       this.data = res;
     });
   }

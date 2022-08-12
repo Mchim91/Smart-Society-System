@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society-service.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crime-offenders',
@@ -7,7 +8,7 @@ import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society
   styleUrls: ['./crime-offenders.component.css']
 })
 export class CrimeOffendersComponent implements OnInit {
-
+  
   constructor(private http: SmartSocietyServiceService) { }
 
   ngOnInit(): void {
