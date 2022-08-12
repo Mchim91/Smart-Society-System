@@ -15,9 +15,21 @@
 
 </app-modal>
 
-<app-table classNames="table table-striped table-bordered" (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
+<app-table classNames="table table-striped table-bordered" (emitEdit)="onEdit($event)" [data]="data" [header]="header"
   (emitDelete)="onDelete($event)"></app-table>
-<!-- <mdb-form-control>
-  <input mdbInput type="text" id="typeText" class="form-control" />
-  <label mdbLabel class="form-label" for="typeText">Text input</label>
-</mdb-form-control> -->
+
+<app-modal  (close)="onClickCloseModal2Add()" [openModal]="openModal2">
+    <div modalTitle > Prison </div>
+    <div modalButton> <button (click)="onUpdate()" class="ui button">Update</button></div>
+    <div modalInput>
+      <app-input [type]="'text'" label="Crime Identification Number" [control]="crimesForm.controls.crimeIdentificationNo"></app-input>
+      <app-input [type]="'text'" label="Crime Category" [control]="crimesForm.controls.crimeCategoryId"></app-input>
+      <app-input [type]="'text'" label="Crime Sub Category" [control]="crimesForm.controls.crimeSubCategoryId"></app-input>
+      <app-input [type]="'text'" label="Crime Type" [control]="crimesForm.controls.crimeType"></app-input>
+      <app-input [type]="'text'" label="Crime Sub Type" [control]="crimesForm.controls.crimeSubType"></app-input>
+      <app-input [type]="'text'" label="Crime Name" [control]="crimesForm.controls.crimeName"></app-input>
+
+
+     </div>
+
+  </app-modal>

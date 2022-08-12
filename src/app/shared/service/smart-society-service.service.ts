@@ -18,8 +18,7 @@ export class SmartSocietyServiceService {
   }
 
   update(_id:string ,details:any, control:string):Observable<any>{
-    console.log(details)
-    return  this.http.patch('http://localhost:3000/api/'+control+'/'+_id,details[0])
+    return  this.http.patch('http://localhost:3000/api/'+control+'/'+_id,details)
    }
 
    delete(id:string,control:string):Observable<any>{

@@ -2,11 +2,11 @@
 </button>
 <app-modal (close)="onClickCloseModalAdd()" [openModal]="openModal">
   <div modalTitle> Prison </div>
-  <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
+  <div modalButton> <button  (click)="onSubmit()" class="btn btn-secondary">Save</button></div>
   <div modalInput>
     <app-input [type]="'text'" label="Name of Prison" [control]="prisonwardForm.controls.name"></app-input>
   </div>
 </app-modal>
 
-<app-table classNames="table table-striped table-bordered" (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
+<app-table classNames="table table-striped table-bordered " (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
   (emitDelete)="onDelete($event)"></app-table>
