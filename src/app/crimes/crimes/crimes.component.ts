@@ -52,6 +52,7 @@ export class CrimesComponent implements OnInit {
   }
   onClickCloseModal2Add(){
     this.openModal2='none'
+    this.crimesForm.reset();
   }
 
 
