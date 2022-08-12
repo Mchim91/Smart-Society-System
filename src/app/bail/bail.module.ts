@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
 
 import { BailRoutingModule } from './bail-routing.module';
 import { BailComponent } from './bail/bail.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { BailComponent } from './bail/bail.component';
   ],
   imports: [
     CommonModule,
-    BailRoutingModule
+    BailRoutingModule,
+    MatListModule,
+    SharedModule
   ],
 
   exports: []

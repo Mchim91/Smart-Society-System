@@ -96,7 +96,7 @@ export class CrimesComponent implements OnInit {
       console.log('not found');
       return;
     }
-    this.http.delete(value, 'prisonward').subscribe((res) =>{});
+    this.http.delete(value, 'crimes').subscribe((res) =>{});
     window.location.reload();
   }
 

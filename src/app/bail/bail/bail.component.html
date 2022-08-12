@@ -1,22 +1,24 @@
-<table class="table table-dark table-bordered table-striped">
-    <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">crimeOffendersId</th>
-          <th scope="col">bailDate</th>
-          <th scope="col">bailerName</th>
-          <th scope="col">bailerPhoneNumber</th>
-          <th scope="col">bailerAdress</th>
-          <th scope="col">bailerEmail</th>
-          <th scope="col">bailBond</th>
-         
-        </tr>
-      </thead>
-      <tbody>
-    <tr *ngFor="let bail of Bail">
-        <td scope="row"> {{ bail.crimeOffendersId }} </td>
-        
-    </tr>
-</tbody>
-</table>
+<button type="button" class="btn btn-primary" (click)="onClickOpenModalAdd()"> Add </button>
+<app-modal  (close)="onClickCloseModalAdd()" [openModal]="openModal">
+  <div modalTitle > Bail </div>
+  <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
+  <div modalInput>
+    <app-input [type]="'text'" label="Crime Offenders"[control]="BailForm.controls.crimeOffendersId"></app-input>
+    <app-input [type]="'text'" label="Bail Date" [control]="BailForm.controls.bailDate"></app-input>
+    <app-input [type]="'text'" label="Bailer Name" [control]="BailForm.controls. bailerName"></app-input>
+    <app-input [type]="'text'" label="Bailer Phone Number" [control]="BailForm.controls.bailerPhoneNumber"></app-input>
+    <app-input [type]="'text'" label="Bailer Address" [control]="BailForm.controls.bailerAddress"></app-input>
+    <app-input [type]="'text'" label="Bailer Email" [control]="BailForm.controls.bailerEmail"></app-input>
+    <app-input [type]="'text'" label="Bail Bond" [control]="BailForm.controls. bailBond"></app-input>
+
+   </div>
+
+</app-modal>
+
+<app-table classNames="table table-striped table-bordered" (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
+  (emitDelete)="onDelete($event)"></app-table>
+<!-- <mdb-form-control>
+  <input mdbInput type="text" id="typeText" class="form-control" />
+  <label mdbLabel class="form-label" for="typeText">Text input</label>
+</mdb-form-control> -->
 

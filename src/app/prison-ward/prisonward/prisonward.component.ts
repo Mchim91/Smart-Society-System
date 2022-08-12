@@ -31,25 +31,29 @@ export class PrisonwardComponent implements OnInit {
   });
 
   onClickOpenModalAdd(){
-
     this.openModal='block'
-  
   }
-
-  onClickOpenModalAdd2(){
-     this.openModal2='block'
-  }
-
   onClickCloseModalAdd(){
     this.openModal='none'
   }
 
-  onUpdate() {
-    const a = this.http
-      .update(this.main?._id, [this.prisonwardForm.value], 'prisonward')
-      .subscribe((res) => {});
-    this.openModal2 = 'none';
-    window.location.reload();
+  onClickOpenModal2Add(){
+    this.openModal2='block'
+  }
+  onClickCloseModal2Add(){
+    this.openModal2='none'
+    this.prisonwardForm.reset();
+  }
+
+  onUpdate(){
+    console.log(this.prisonwardForm.value)
+    if(this.prisonwardForm.invalid){
+      return
+    }this.http.update(this.main._id,this.prisonwardForm.value,'prisonward').subscribe((res) => {
+      console.log(res);
+      this. ngOnInit()
+      this.openModal2='none'
+    });
   }
   onSubmit(){
     this.http.create(this.prisonwardForm.value, 'prisonward').subscribe((res) => {
@@ -61,9 +65,9 @@ export class PrisonwardComponent implements OnInit {
   }
 
   onEdit(value: any){
-    this.openModal2='none';
+    this.onClickOpenModal2Add()
     this.prisonwardForm.setValue({
-      name: value?.name
+      name: value?.name,
     });
     this.main = value;
   }
