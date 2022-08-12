@@ -10,7 +10,18 @@
 
 </app-modal>
 
-<app-table classNames="table table-striped table-bordered" (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
+<app-table classNames="table table-striped table-bordered" (emitEdit)="onEdit($event)" [data]="data" [header]="header"
   (emitDelete)="onDelete($event)"></app-table>
 
+  <app-modal  (close)="onClickCloseModal2Add()" [openModal]="openModal2">
+    <div modalTitle > Base Enitity </div>
+    <div modalButton> <button (click)="onUpdate()" class="ui button">Update</button></div>
+    <div modalInput>
+      <app-input [type]="'date'" label="Created at" [control]="baseentityForm.controls.createdAt"></app-input>
+      <app-input [type]="'text'" label="modify by" [control]="baseentityForm.controls.modifyById"></app-input>
+      <app-input [type]="'date'" label="modified at" [control]="baseentityForm.controls.modifiedAt"></app-input>
+
+     </div>
+
+  </app-modal>
     

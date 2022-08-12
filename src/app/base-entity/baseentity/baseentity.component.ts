@@ -38,25 +38,29 @@ export class BaseentityComponent implements OnInit {
   });
 
   onClickOpenModalAdd(){
-
     this.openModal='block'
-  
   }
-
-  onClickOpenModalAdd2(){
-     this.openModal2='block'
-  }
-
   onClickCloseModalAdd(){
     this.openModal='none'
   }
 
-  onUpdate() {
-    const a = this.http
-      .update(this.main?._id, [this.baseentityForm.value], 'baseentity')
-      .subscribe((res) => {});
-    this.openModal2 = 'none';
-    window.location.reload();
+  onClickOpenModal2Add(){
+    this.openModal2='block'
+  }
+  onClickCloseModal2Add(){
+    this.openModal2='none'
+    this.baseentityForm.reset();
+  }
+
+
+onUpdate() {
+    if(this.baseentityForm.invalid){
+      return
+    }this.http.update(this.main._id,this.baseentityForm.value,'baseentity').subscribe((res) => {
+      console.log(res);
+      this. ngOnInit()
+      this.openModal2='none'
+    });  
   }
   onSubmit(){
     this.http.create(this.baseentityForm.value, 'baseentity').subscribe((res) => {
@@ -68,7 +72,8 @@ export class BaseentityComponent implements OnInit {
   }
 
   onEdit(value: any){
-    this.openModal2='none';
+    console.log("d")
+    this.onClickOpenModal2Add()
     this.baseentityForm.setValue({
       createdAt: value?.createdAt,
       modifyById: value?.modifyById,

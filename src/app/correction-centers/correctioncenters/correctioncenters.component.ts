@@ -24,7 +24,7 @@ export class CorrectioncentersComponent implements OnInit {
 
   ngOnInit(): void {
     const a = this.http.findAll('correctioncenters').subscribe((res:any) => {
-      this.data = res;
+      this.data =
       console.log(res)
 
     });
@@ -37,25 +37,28 @@ export class CorrectioncentersComponent implements OnInit {
   });
 
   onClickOpenModalAdd(){
-
     this.openModal='block'
-  
   }
-
-  onClickOpenModalAdd2(){
-     this.openModal2='block'
-  }
-
   onClickCloseModalAdd(){
     this.openModal='none'
   }
 
+  onClickOpenModal2Add(){
+    this.openModal2='block'
+  }
+  onClickCloseModal2Add(){
+    this.openModal2='none'
+    this.correctioncenterForm.reset();
+  }
+
   onUpdate() {
-    const a = this.http
-      .update(this.main?._id, [this.correctioncenterForm.value], 'correctioncenters')
-      .subscribe((res) => {});
-    this.openModal2 = 'none';
-    window.location.reload();
+    if(this.correctioncenterForm.invalid){
+      return
+    }this.http.update(this.main._id,this.correctioncenterForm.value,'correctioncenters').subscribe((res) => {
+      console.log(res);
+      this. ngOnInit()
+      this.openModal2='none'
+    });  
   }
   onSubmit(){
     this.http.create(this.correctioncenterForm.value, 'correctioncenters').subscribe((res) => {
@@ -67,7 +70,8 @@ export class CorrectioncentersComponent implements OnInit {
   }
 
   onEdit(value: any){
-    this.openModal2='none';
+    console.log("d")
+    this.onClickOpenModal2Add()
     this.correctioncenterForm.setValue({
       name: value?.name,
       prisonType: value?.prisonType
