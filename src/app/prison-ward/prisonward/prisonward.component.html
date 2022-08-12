@@ -1,12 +1,21 @@
 <button style="margin: 50px; padding: 10px" type="button" class="btn btn-primary" (click)="onClickOpenModalAdd()">Add
 </button>
 <app-modal (close)="onClickCloseModalAdd()" [openModal]="openModal">
-  <div modalTitle> Prison </div>
+  <div modalTitle> Prison Ward </div>
   <div modalButton> <button  (click)="onSubmit()" class="btn btn-secondary">Save</button></div>
   <div modalInput>
     <app-input [type]="'text'" label="Name of Prison" [control]="prisonwardForm.controls.name"></app-input>
   </div>
 </app-modal>
 
-<app-table classNames="table table-striped table-bordered " (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
+<app-table classNames="table table-striped table-bordered " (emitEdit)="onEdit($event)" [data]="data" [header]="header"
   (emitDelete)="onDelete($event)"></app-table>
+
+  <app-modal  (close)="onClickCloseModal2Add()" [openModal]="openModal2">
+    <div modalTitle > Prison Ward </div>
+    <div modalButton> <button (click)="onUpdate()" class="ui button">Update</button></div>
+    <div modalInput>
+      <app-input [type]="'text'" label="Name" [control]="prisonwardForm.controls.name"></app-input>
+     </div>
+
+  </app-modal>
