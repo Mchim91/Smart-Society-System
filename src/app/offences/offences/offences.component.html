@@ -1,1 +1,23 @@
-<p>offences works!</p>
+<button type="button" class="btn btn-primary" (click)="onClickOpenModalAdd()"> Add </button>
+<app-modal  (close)="onClickCloseModalAdd()" [openModal]="openModal">
+  <div modalTitle > Offence</div>
+  <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
+  <div modalInput>
+    <app-input [type]="'text'" label=" Offence Code"[control]=" OffenceForm.controls.offenceCode"></app-input>
+    <app-input [type]="'text'" label="Offence Category" [control]=" OffenceForm.controls.offenceCategory"></app-input>
+    <app-input [type]="'text'" label="Offence Sub Category" [control]=" OffenceForm.controls.offenceSubCategory"></app-input>
+    <app-input [type]="'text'" label="Offence Name" [control]=" OffenceForm.controls. offenceName"></app-input>
+
+
+   </div>
+
+</app-modal>
+
+<app-table classNames="table table-striped table-bordered" (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
+  (emitDelete)="onDelete($event)"></app-table>
+<!-- <mdb-form-control>
+  <input mdbInput type="text" id="typeText" class="form-control" />
+  <label mdbLabel class="form-label" for="typeText">Text input</label>
+</mdb-form-control> -->
+
+

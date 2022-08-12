@@ -1,1 +1,25 @@
-<p>courtcharge works!</p>
+<button type="button" class="btn btn-primary" (click)="onClickOpenModalAdd()"> Add </button>
+<app-modal  (close)="onClickCloseModalAdd()" [openModal]="openModal">
+  <div modalTitle > courtcharge </div>
+  <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
+  <div modalInput>
+    <app-input [type]="'text'" label="Charge Time" [control]="CourtChargeForm.controls.chargeTime"></app-input>
+    <app-input [type]="'text'" label="Crime Offenders" [control]="CourtChargeForm.controls.crimeOffendersId"></app-input>
+    <app-input [type]="'text'" label="Court Rulling" [control]="CourtChargeForm.controls.courtRulling"></app-input>
+    <app-input [type]="'text'" label="Penalty " [control]="CourtChargeForm.controls.penalty"></app-input>
+    <app-input [type]="'text'" label="Court Name" [control]="CourtChargeForm.controls.courtName"></app-input>
+    <app-input [type]="'text'" label="Court Judge" [control]="CourtChargeForm.controls.courtJudge"></app-input>
+    <app-input [type]="'text'" label="Offenders Lawyer" [control]="CourtChargeForm.controls.offendersLawyers"></app-input>
+
+
+   </div>
+
+</app-modal>
+
+<app-table classNames="table table-striped table-bordered" (emitEdit2)="onEdit($event)" [data]="data" [header]="header"
+  (emitDelete)="onDelete($event)"></app-table>
+<!-- <mdb-form-control>
+  <input mdbInput type="text" id="typeText" class="form-control" />
+  <label mdbLabel class="form-label" for="typeText">Text input</label>
+</mdb-form-control> -->
+
