@@ -14,7 +14,7 @@ export class OffendersComponent implements OnInit {
   main = [] as any;
   data = [] as any;
 
-  
+
 header = [
     { key: 'offenderIdentificationNO', label: 'Id'},
     { key: 'offenderName', label: 'Name'},
@@ -32,7 +32,7 @@ header = [
 
   OffendersForm = new FormGroup({
 
-  
+
     offenderIdentificationNO: new FormControl('', [Validators.required]),
     offenderName: new FormControl('', [Validators.required]),
     offenderGender: new FormControl('', [Validators.required]),
@@ -61,12 +61,12 @@ header = [
       console.log(res);
       this. ngOnInit()
       this.openModal2='none'
-    });  
+    });
   }
   onSubmit(){
     this.http.create(this.OffendersForm.value, 'offenders').subscribe((res) => {
-      
-    
+
+
       console.log( this.data);
       this.OffendersForm.reset();
       this.openModal='none'
@@ -84,6 +84,10 @@ header = [
       offenderDescription: value?.offenderDescription
     });
     this.main = value;
+  }
+
+  onDetail(value:any){
+    console.log(value)
   }
 
   onDelete(value: any){

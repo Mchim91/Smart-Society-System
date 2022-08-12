@@ -15,6 +15,7 @@ export class TableComponent implements OnInit {
   @Output() emitEdit = new EventEmitter<any>();
 
   @Output() emitDelete = new EventEmitter<any>();
+  @Output() onDetail = new EventEmitter<any>();
 
 
 
@@ -23,7 +24,6 @@ export class TableComponent implements OnInit {
     ngOnInit(): void {
       if(this.data.length > -1){
         return
-
       }
       this.table=true
       console.log(this.table)

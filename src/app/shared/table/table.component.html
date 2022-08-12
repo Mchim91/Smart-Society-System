@@ -8,19 +8,19 @@
       </tr>
     </thead>
     <tbody>
-  
-  
+
+
       <tr *ngFor="let d of data">
-        <td *ngFor="let head of header ">
+        <td (click)="onDetail.emit(d)" *ngFor="let head of header ">
           {{d[head.key]}}
         </td>
         <td>
-  
+
             <button  class="btn btn-secondary" (click)="emitEdit.emit(d)" >
               Edit
             </button>
-  
-  
+
+
           <button class="btn btn-secondary" (click)="emitDelete.emit(d?._id)">
             Delete
           </button>
@@ -29,4 +29,3 @@
     </tbody>
   </table>
 
-  

@@ -1,7 +1,7 @@
 <button type="button" class="btn btn-primary" (click)="onClickOpenModalAdd()"> Add </button>
 
 <div class="search">
-<input #search type="search" name="" id=""> 
+<input #search type="search" name="" id="">
 <button (click)="onSearch(search.value)" type="submit">search</button>
 </div>
 
@@ -14,10 +14,10 @@
       <app-input [type]="'text'" label="Gender" [control]="OffendersForm.controls.offenderGender"></app-input>
       <app-input [type]="'text'" label="Description" [control]="OffendersForm.controls.offenderDescription"></app-input>
     </div>
-  
+
   </app-modal>
 
-  <app-table classNames="table table-striped table-bordered" (emitEdit)="onEdit($event)" [data]="data" [header]="header"
+  <app-table classNames="table table-striped table-bordered" (onDetail)="onDetail($event)" (emitEdit)="onEdit($event)" [data]="data" [header]="header"
   (emitDelete)="onDelete($event)"></app-table>
 
   <app-modal  (close)="onClickCloseModal2Add()" [openModal]="openModal2">
@@ -31,4 +31,3 @@
      </div>
 
   </app-modal>
-    
