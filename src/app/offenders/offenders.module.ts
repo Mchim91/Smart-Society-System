@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { OffendersRoutingModule } from './offenders-routing.module';
 import { OffendersComponent } from './offenders/offenders.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { OffendersComponent } from './offenders/offenders.component';
   ],
   imports: [
     CommonModule,
-    OffendersRoutingModule
+    OffendersRoutingModule,SharedModule
   ],
 
   exports: []

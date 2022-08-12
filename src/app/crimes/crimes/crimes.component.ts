@@ -22,7 +22,7 @@ export class CrimesComponent implements OnInit {
     { key: 'crimeSubType', label: 'Crime Sub Type'},
     { key: 'crimeName', label: 'Crime Name'},
   ];
-  
+
   constructor(private http: SmartSocietyServiceService) { }
 
   ngOnInit(): void {
@@ -41,26 +41,44 @@ export class CrimesComponent implements OnInit {
   });
 
   onClickOpenModalAdd(){
-
     this.openModal='block'
-  
   }
-
   onClickCloseModalAdd(){
     this.openModal='none'
   }
+
+  onClickOpenModal2Add(){
+    this.openModal2='block'
+  }
+  onClickCloseModal2Add(){
+    this.openModal2='none'
+  }
+
+
 
   onSubmit(){
     this.http.create(this.crimesForm.value, 'crimes').subscribe((res) => {
       console.log(res);
       this.crimesForm.reset();
+      this. ngOnInit()
       this.openModal='none'
     });
 
   }
 
+  onUpdate(){
+    console.log(this.crimesForm.value)
+    if(this.crimesForm.invalid){
+      return
+    }this.http.update(this.main._id,this.crimesForm.value,'crimes').subscribe((res) => {
+      console.log(res);
+      this. ngOnInit()
+      this.openModal2='none'
+    });
+  }
+
   onEdit(value: any){
-    this.openModal2='none';
+    this.onClickOpenModal2Add()
     this.crimesForm.setValue({
       crimeIdentificationNo: value?.crimeIdentificationNo,
       crimeCategoryId: value?.crimeCategoryId,
