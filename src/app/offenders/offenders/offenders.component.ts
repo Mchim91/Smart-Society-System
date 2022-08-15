@@ -103,7 +103,7 @@ header = [
 
   onSearch(id:string){
     console.log(id)
-this.http.findIdNo(id,'offenders').subscribe(res=>{
+this.http.searchByIdentificationNo(id,'offenders').subscribe(res=>{
   console.log(res)
   this.data=res
 })
