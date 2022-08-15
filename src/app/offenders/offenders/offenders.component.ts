@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offenders',
@@ -21,7 +22,7 @@ header = [
     { key: 'offenderGender', label: 'Gender'},
     { key: 'offenderDescription:', label: 'Description '}
   ];
-  constructor(private http: SmartSocietyServiceService) { }
+  constructor(private http: SmartSocietyServiceService,private rout:Router) { }
 
   ngOnInit(): void {
     const a = this.http.findAll('offenders').subscribe((res:any) => {
@@ -87,7 +88,8 @@ header = [
   }
 
   onDetail(value:any){
-    console.log(value)
+    console.log(value.offenderIdentificationNO)
+    this.rout.navigateByUrl('offenders/'+value?.offenderIdentificationNO)
   }
 
   onDelete(value: any){

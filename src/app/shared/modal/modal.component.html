@@ -21,6 +21,7 @@
     class="btn btn-primary"
     (click)="openPopup()">Show Data
   </button> -->
+  
 <div (click)="closePopup()" class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':openModal}">
   <div (click)="$event.stopPropagation()" class="modal-dialog" role="document">
     <div  class="modal-content">

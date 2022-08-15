@@ -10,22 +10,26 @@
     <tbody>
 
 
-      <tr *ngFor="let d of data">
-        <td (click)="onDetail.emit(d)" *ngFor="let head of header ">
+      <ng-container  >
+      <tr  *ngFor="let d of data">
+
+        <td  (click)="onDetail.emit(d)" *ngFor="let head of header ">
           {{d[head.key]}}
         </td>
+
         <td>
 
             <button  class="btn btn-secondary" (click)="emitEdit.emit(d)" >
               Edit
             </button>
 
-
           <button class="btn btn-secondary" (click)="emitDelete.emit(d?._id)">
             Delete
           </button>
         </td>
       </tr>
+    </ng-container>
     </tbody>
   </table>
 
+<div ></div>

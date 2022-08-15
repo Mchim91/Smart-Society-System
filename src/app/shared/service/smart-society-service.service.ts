@@ -20,6 +20,9 @@ export class SmartSocietyServiceService {
   findIdNo(id:string,control:string):Observable<any>{
     return this.http.get('http://localhost:3000/api/'+control+'/IdNo/'+id);
   }
+  findOffendersInCrimeOffenders(id:string,control:string){
+    return this.http.get('http://localhost:3000/api/'+control+'/offender/'+id);
+  }
 
   update(_id:string ,details:any, control:string):Observable<any>{
     return  this.http.patch('http://localhost:3000/api/'+control+'/'+_id,details)

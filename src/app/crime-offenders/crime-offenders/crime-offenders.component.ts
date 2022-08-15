@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society-service.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crime-offenders',
@@ -8,14 +8,30 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./crime-offenders.component.css']
 })
 export class CrimeOffendersComponent implements OnInit {
-  
-  constructor(private http: SmartSocietyServiceService) { }
+  CrimeOffenders=[]as any[]
+  constructor(private http: SmartSocietyServiceService,private rout:ActivatedRoute) {
+    this.CrimeOffenders=rout.snapshot.data['crimeoffenders']
+     this.getId()
+   }
 
   ngOnInit(): void {
-    const a = this.http.findAll('crimeOffenders').subscribe((res:any) => {
-      console.log(res)
+    this.getId()
 
-    });
+
   }
 
-}
+  getId(){
+
+      this.rout.data.subscribe(({crimeoffenders})=>{
+        this.CrimeOffenders=crimeoffenders
+        console.log(crimeoffenders)
+      })
+    }
+
+
+
+  }
+// const a = this.http.findAll('crimeOffenders').subscribe((res:any) => {
+//       console.log(res)
+
+//     });

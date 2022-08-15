@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -25,8 +26,17 @@ export class TableComponent implements OnInit {
       if(this.data.length > -1){
         return
       }
+      console.log("ds")
       this.table=true
       console.log(this.table)
+
+    }
+d='d'
+    c(d:string){
+
+
+
+
     }
 
 
