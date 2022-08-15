@@ -20,7 +20,18 @@ header = [
     { key: 'offenderIdentificationNO', label: 'Id'},
     { key: 'offenderName', label: 'Name'},
     { key: 'offenderGender', label: 'Gender'},
-    { key: 'offenderDescription:', label: 'Description '}
+    { key: 'offenderDescription', label: 'Description'},
+    { key: 'offenderEmail', label: 'Email'},
+    { key: 'offenderNextOfKin', label: 'Next Of Kin'},
+    { key: 'offenderAddress', label: 'Address'},
+    { key: 'offenderStateOfOrigin', label: 'State Of Origin'},
+    { key: 'offenderCountry', label: 'Country'},
+    { key: 'offenderBiometrics', label: 'Biometrics'},
+    { key: 'offenderPicture', label:'Picture'},
+    { key: 'offenderLga', label: 'Lga'},
+    { key: 'offenderDateOfBirth', label: 'Date Of Birth'},
+    { key: 'offenderType', label: 'Type'},
+
   ];
   constructor(private http: SmartSocietyServiceService,private rout:Router) { }
 
@@ -38,6 +49,16 @@ header = [
     offenderName: new FormControl('', [Validators.required]),
     offenderGender: new FormControl('', [Validators.required]),
     offenderDescription: new FormControl('', [Validators.required]),
+    offenderEmail: new FormControl('', [Validators.required]),
+    offenderNextOfKin: new FormControl('', [Validators.required]),
+    offenderAddress: new FormControl('', [Validators.required]),
+    offenderStateOfOrigin: new FormControl('', [Validators.required]),
+    offenderCountry: new FormControl('', [Validators.required]),
+    offenderBiometrics: new FormControl('', [Validators.required]),
+    offenderPicture: new FormControl('', [Validators.required]),
+    offenderLga: new FormControl('', [Validators.required]),
+    offenderDateOfBirth: new FormControl('', [Validators.required]),
+    offenderType: new FormControl('', [Validators.required]),
   });
 
   onClickOpenModalAdd(){
@@ -65,10 +86,11 @@ header = [
     });
   }
   onSubmit(){
+    console.log( this.OffendersForm.value);
     this.http.create(this.OffendersForm.value, 'offenders').subscribe((res) => {
 
 
-      console.log( this.data);
+      console.log( res);
       this.OffendersForm.reset();
       this.openModal='none'
     });
@@ -82,7 +104,19 @@ header = [
       offenderIdentificationNO: value?.offenderIdentificationNO,
       offenderName: value?.offenderName,
       offenderGender: value?.offenderGender,
-      offenderDescription: value?.offenderDescription
+      offenderDescription: value?.offenderDescription,
+      offenderEmail: value?.offenderEmail,
+      offenderNextOfKin: value?.  offenderNextOfKin,
+      offenderAddress: value?.offenderAddress,
+      offenderStateOfOrigin: value?. offenderStateOfOrigin,
+      offenderCountry: value?.offenderCountry,
+      offenderBiometrics: value?.offenderBiometrics,
+      offenderPicture: value?.offenderPicture,
+      offenderLga: value?.offenderLga,
+      offenderDateOfBirth: value?.offenderDateOfBirth,
+      offenderType: value?.offenderType,
+
+
     });
     this.main = value;
   }

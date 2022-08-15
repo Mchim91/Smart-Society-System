@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
 
 import { OffendersRoutingModule } from './offenders-routing.module';
 import { OffendersComponent } from './offenders/offenders.component';
@@ -12,7 +13,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    OffendersRoutingModule,SharedModule
+    OffendersRoutingModule,
+    SharedModule,
+    MatListModule
   ],
 
   exports: []
