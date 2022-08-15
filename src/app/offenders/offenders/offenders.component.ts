@@ -17,7 +17,7 @@ export class OffendersComponent implements OnInit {
 
 
 header = [
-    { key: 'offenderIdentificationNO', label: 'Id'},
+    { key: 'offenderIdentificationNo', label: 'Id'},
     { key: 'offenderName', label: 'Name'},
     { key: 'offenderGender', label: 'Gender'},
     { key: 'offenderDescription', label: 'Description'},
@@ -45,7 +45,7 @@ header = [
   OffendersForm = new FormGroup({
 
 
-    offenderIdentificationNO: new FormControl('', [Validators.required]),
+    offenderIdentificationNo: new FormControl('', [Validators.required]),
     offenderName: new FormControl('', [Validators.required]),
     offenderGender: new FormControl('', [Validators.required]),
     offenderDescription: new FormControl('', [Validators.required]),
@@ -101,7 +101,7 @@ header = [
     console.log("d")
     this.onClickOpenModal2Add()
     this.OffendersForm.setValue({
-      offenderIdentificationNO: value?.offenderIdentificationNO,
+      offenderIdentificationNo: value?.offenderIdentificationNo,
       offenderName: value?.offenderName,
       offenderGender: value?.offenderGender,
       offenderDescription: value?.offenderDescription,
@@ -122,8 +122,8 @@ header = [
   }
 
   onDetail(value:any){
-    console.log(value.offenderIdentificationNO)
-    this.rout.navigateByUrl('offenders/'+value?.offenderIdentificationNO)
+    console.log(value.offenderIdentificationNo)
+    this.rout.navigateByUrl('offenders/'+value?.offenderIdentificationNo)
   }
 
   onDelete(value: any){
@@ -137,7 +137,7 @@ header = [
 
   onSearch(id:string){
     console.log(id)
-this.http.findIdNo(id,'offenders').subscribe(res=>{
+this.http.searchByIdentificationNo(id,'offenders').subscribe(res=>{
   console.log(res)
   this.data=res
 })
