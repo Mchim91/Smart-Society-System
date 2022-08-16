@@ -8,6 +8,7 @@ import { SmartSocietyServiceService } from './shared/service/smart-society-servi
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'Smart-Society-System';
    constructor() { }
   }

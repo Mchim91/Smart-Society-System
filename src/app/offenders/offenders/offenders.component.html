@@ -5,15 +5,33 @@
 <button (click)="onSearch(search.value)" type="submit">search</button>
 </div>
 
+
+
 <app-modal  (close)="onClickCloseModalAdd()" [openModal]="openModal">
     <div modalTitle ><h1> Offenders </h1></div>
     <div modalButton> <button (click)="onSubmit()" class="ui button">Save</button></div>
     <div modalInput>
-      <app-input [type]="'text'" label="Id" [control]="OffendersForm.controls.offenderIdentificationNO"></app-input>
+      <app-input [type]="'text'" label="Id" [control]="OffendersForm.controls.offenderIdentificationNo"></app-input>
       <app-input [type]="'text'" label="Name" [control]="OffendersForm.controls.offenderName"></app-input>
       <app-input [type]="'text'" label="Gender" [control]="OffendersForm.controls.offenderGender"></app-input>
       <app-input [type]="'text'" label="Description" [control]="OffendersForm.controls.offenderDescription"></app-input>
+
+      <mat-slide-toggle (change)="onChange($event)">Slide Toggle Checked: {{isChecked}}</mat-slide-toggle>
+
+      <div *ngIf="isCrime">
+      <app-input [type]="'text'" label="Email" [control]="OffendersForm.controls.offenderEmail"></app-input>
+      <app-input [type]="'text'" label="Next Of Kin" [control]="OffendersForm.controls.offenderNextOfKin"></app-input>
+      <app-input [type]="'text'" label="Address" [control]="OffendersForm.controls.offenderAddress"></app-input>
+      <app-input [type]="'text'" label="State Of Origin" [control]="OffendersForm.controls. offenderStateOfOrigin"></app-input>
+      <app-input [type]="'text'" label="Country" [control]="OffendersForm.controls.offenderCountry"></app-input>
+      <app-input [type]="'text'" label="Biometrics" [control]="OffendersForm.controls.offenderBiometrics"></app-input>
+      <app-input [type]="'text'" label="Picture" [control]="OffendersForm.controls.offenderPicture"></app-input>
+      <app-input [type]="'text'" label="Lga" [control]="OffendersForm.controls.offenderLga"></app-input>
+      <app-input [type]="'text'" label="Date Of Birth" [control]="OffendersForm.controls.offenderDateOfBirth"></app-input>
+      <app-input [type]="'text'" label="Type" [control]="OffendersForm.controls.offenderType"></app-input>
+      </div>
     </div>
+
 
   </app-modal>
 
@@ -24,12 +42,25 @@
     <div modalTitle > Offenders </div>
     <div modalButton> <button (click)="onUpdate()" class="ui button">Update</button></div>
     <div modalInput>
-        <app-input [type]="'text'" label="Id" [control]="OffendersForm.controls.offenderIdentificationNO"></app-input>
+        <app-input [type]="'text'" label="Id" [control]="OffendersForm.controls.offenderIdentificationNo"></app-input>
         <app-input [type]="'text'" label="Name" [control]="OffendersForm.controls.offenderName"></app-input>
         <app-input [type]="'text'" label="Gender" [control]="OffendersForm.controls.offenderGender"></app-input>
         <app-input [type]="'text'" label="Description" [control]="OffendersForm.controls.offenderDescription"></app-input>
+        <app-input [type]="'text'" label="Email" [control]="OffendersForm.controls.offenderEmail"></app-input>
+        <app-input [type]="'text'" label="Next Of Kin" [control]="OffendersForm.controls.  offenderNextOfKin"></app-input>
+        <app-input [type]="'text'" label="Address" [control]="OffendersForm.controls.offenderAddress"></app-input>
+        <app-input [type]="'text'" label="State Of Origin" [control]="OffendersForm.controls. offenderStateOfOrigin"></app-input>
+        <app-input [type]="'text'" label="Country" [control]="OffendersForm.controls.offenderCountry"></app-input>
+        <app-input [type]="'text'" label="Biometrics" [control]="OffendersForm.controls.offenderBiometrics"></app-input>
+        <app-input [type]="'text'" label="Picture" [control]="OffendersForm.controls.offenderPicture"></app-input>
+        <app-input [type]="'text'" label="Lga" [control]="OffendersForm.controls.offenderLga"></app-input>
+        <app-input [type]="'text'" label="Date Of Birth" [control]="OffendersForm.controls.offenderDateOfBirth"></app-input>
+        <app-input [type]="'text'" label="Type" [control]="OffendersForm.controls.offenderType"></app-input>
+
      </div>
 
   </app-modal>
+
+  <div><a href="" [routerLink]="['']" routerLinkActive="router-link-active" ></a></div>
 
   

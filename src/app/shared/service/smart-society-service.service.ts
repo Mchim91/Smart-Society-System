@@ -18,8 +18,8 @@ export class SmartSocietyServiceService {
     return this.http.get('http://localhost:3000/api/'+control+'/'+id);
   }
 
-  findIdNo(id:string,control:string):Observable<any>{
-    return this.http.get('http://localhost:3000/api/'+control+'/IdNo/'+id);
+  searchByIdentificationNo(id:string,control:string):Observable<any>{
+    return this.http.get('http://localhost:3000/api/'+control+'/searchByIdentificationNo/'+id);
   }
   findOffendersInCrimeOffenders(id:string,control:string){
     return this.http.get('http://localhost:3000/api/'+control+'/offender/'+id);
