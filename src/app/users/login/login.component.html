@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()" class="example-form">
+  
+
+      <app-input [placeholder]="'Username'"   [control]="loginForm.controls.username"></app-input>
+     <app-input [placeholder]="'Password'" [type]="'password'"  [control]="loginForm.controls.password"></app-input>
+
+  
+  <button  [disabled]="!loginForm.valid" type="submit" >Log in</button>
+  <button  routerLinkActive="active" class="item"  routerLink="/users">Register</button>
+</form>

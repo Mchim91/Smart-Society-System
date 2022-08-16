@@ -1,0 +1,8 @@
+.login-wrapper{
+    height: 80%;
+  font-style: initial;
+}
+
+.login-wrapper .mat-card {
+    border: 5px solid green;
+}
