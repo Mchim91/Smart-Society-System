@@ -19,6 +19,7 @@ export class OffendersComponent implements OnInit {
   data = [] as any;
   isCrime=false;
   isChecked = true;
+   
 
 header = [
     { key: 'offenderIdentificationNo', label: 'Id'},
