@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SmartSocietyServiceService } from 'src/app/shared/service/smart-society-service.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 @Component({
   selector: 'app-offenders',
@@ -9,12 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./offenders.component.css']
 })
 export class OffendersComponent implements OnInit {
+
+   
   openModal='none';
   openModal2 = 'none';
   duration=0;
   main = [] as any;
   data = [] as any;
-
+  isCrime=false;
+  isChecked = true;
 
 header = [
     { key: 'offenderIdentificationNo', label: 'Id'},
@@ -41,7 +45,10 @@ header = [
       this.data=res
     });
   }
-
+  onChange($event: MatSlideToggleChange) {
+    this.isCrime=$event.checked
+    console.log($event);
+}
   OffendersForm = new FormGroup({
 
 
